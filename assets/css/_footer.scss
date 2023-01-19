@@ -1,0 +1,25 @@
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: {
+    family: $h-font;
+    size: $h6size;
+  }
+  background-color: $header-bg;
+  color: $footer-txt;
+  > p {
+    padding: $btn-plr;
+  }
+  a {
+    color: $footer-txt;
+    text-decoration: none;
+    &:hover {
+      color: $head-ahover;
+    }
+  }
+}

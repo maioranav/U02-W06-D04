@@ -1,0 +1,88 @@
+main {
+  display: flex;
+  justify-content: center;
+  @extend body;
+  font-family: $text-font;
+
+  //HEADING SIZE SEZIONE CENTRALE
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $h-font;
+  }
+  h1 {
+    font-size: $h1size;
+  }
+  h2 {
+    font-size: $h2size;
+  }
+  h3 {
+    padding: $btn-plr;
+    font-weight: 600;
+    font-size: $h3size;
+  }
+  h4 {
+    font-size: $h4size;
+  }
+  h5 {
+    font-size: $h5size;
+  }
+  h6 {
+    font-size: $h6size;
+  }
+
+  //DEFAULT INTERLINEA SEZIONI CENTRALI
+
+  p {
+    line-height: $plineh;
+  }
+
+  //SEZIONI CENTRALI
+
+  #cover {
+    @include fw-img();
+  }
+}
+
+article {
+  @media screen and (min-width: 925px) {
+    width: 80vw;
+  }
+}
+
+aside {
+  display: none;
+  @media screen and (min-width: 925px) {
+    display: block;
+  }
+  width: 20vw;
+  @include fullmarpad("padding");
+  h4,
+  .social {
+    margin: {
+      top: $btn-ptb;
+      bottom: $btn-ptb;
+    }
+  }
+  .social {
+    font-size: 2em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $btn-ptb * 2;
+    a {
+      color: $footer-txt;
+      text-decoration: none;
+      &:hover {
+        color: $head-ahover;
+      }
+    }
+  }
+}
+
+.centered {
+  text-align: center;
+}

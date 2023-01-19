@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$h-font: "Poppins", sans-serif !default;
+$text-font: "Roboto", sans-serif !default;
+$header-bg: #555555 !default;
+$head-txt: #f2f2f2 !default;
+$head-ahover: rgb(194, 0, 81) !default;
+$head-aactive: rgb(194, 0, 81) !default;
+$footer-txt: #b4b4b4 !default;
+$navlogoh: 50px !default;
+$nav-padding: 20px !default;
+$navlipad: 20px !default;
+$bg-type: color !default;
+$body-bg: #f0f0f0 !default;
+$text-col: #222222 !default;
+$btn-bg-col: rgb(194, 0, 81) !default;
+$btn-bg-colhover: rgb(201, 70, 125) !default;
+$btn-text: #f2f2f2 !default;
+$btn-plr: 20px !default;
+$btn-ptb-mult: 0.5 !default;
+$form-bg: #555555 !default;
+$h1size: 30px !default;
+$h2-6multip: 0.9 !default;
+$plineh: 1.7em !default;
+
+//calcolate
+$btn-ptb: $btn-plr * $btn-ptb-mult !default;
+$h2size: $h1size * $h2-6multip !default;
+$h3size: $h2size * $h2-6multip !default;
+$h4size: $h3size * $h2-6multip !default;
+$h5size: $h4size * $h2-6multip !default;
+$h6size: $h5size * $h2-6multip !default;
+
+//auto margin/padding (margin as default)
+
+@mixin fullmarpad($proprieta: "margin") {
+  @if $proprieta == "padding" {
+    padding: {
+      left: $btn-plr;
+      right: $btn-plr;
+      top: $btn-ptb;
+      bottom: $btn-ptb;
+    }
+  } @else {
+    margin: {
+      left: $btn-plr;
+      right: $btn-plr;
+      top: $btn-ptb;
+      bottom: $btn-ptb;
+    }
+  }
+}
+
+@mixin fw-img() {
+  display: block;
+  width: 100%;
+  > img {
+    width: 100%;
+    aspect-ratio: 5/1;
+    object-fit: cover;
+  }
+}
+
+@mixin textSection() {
+  display: flex;
+  margin-bottom: $btn-plr;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  > p {
+    padding: $btn-plr;
+    padding-top: 0;
+  }
+  > img {
+    width: 35%;
+    min-width: 150px;
+    aspect-ratio: 1/1;
+    padding-right: $btn-plr;
+  }
+}
+
+@for $i from 1 to 5 {
+  .generic-container-#{$i} {
+    @include textSection();
+  }
+}
+
+//DEFAULT BODY COLOR-BG AND TEXT
+@mixin customBody($text, $bgsel, $bgval) {
+  color: $text;
+  background-#{$bgsel}: $bgval;
+}
+
+body {
+  @include customBody($text-col, $bg-type, $body-bg);
+}

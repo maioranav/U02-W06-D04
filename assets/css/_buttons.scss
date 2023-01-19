@@ -1,0 +1,25 @@
+button {
+  @include fullmarpad("padding");
+  background-color: $btn-bg-col;
+  color: $btn-text;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.6s ease, scale 0.3s ease;
+  &:hover {
+    background-color: $btn-bg-colhover;
+    cursor: pointer;
+  }
+}
+#btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: $btn-plr * 5;
+  button {
+    @include fullmarpad();
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}

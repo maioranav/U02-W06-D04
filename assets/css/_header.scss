@@ -1,0 +1,48 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: $header-bg;
+  color: $head-txt;
+  font-family: $h-font;
+}
+nav {
+  @extend header;
+  @media screen and (max-width: 471px) {
+    justify-content: center;
+  }
+  padding: $nav-padding;
+  h1 {
+    display: flex;
+    font-size: $h1size;
+    align-items: center;
+    cursor: default;
+    img {
+      border-radius: 30px;
+      aspect-ratio: 1/1;
+      height: $navlogoh;
+      margin-right: $navlipad;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    li {
+      font-family: $h-font;
+      padding-left: $navlipad;
+      a {
+        color: $head-txt;
+        text-decoration: none;
+        &:hover,
+        &:active {
+          color: $head-ahover;
+          cursor: pointer;
+        }
+      }
+    }
+    @media screen and (max-width: 471px) {
+      display: none;
+    }
+  }
+}

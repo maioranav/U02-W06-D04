@@ -1,0 +1,40 @@
+/* #contacts {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $btn-plr * 5;
+} */
+form {
+  display: inline-flex;
+  padding: $btn-plr * 0.5;
+  background-color: $form-bg;
+  color: $head-txt;
+  width: 90%;
+  div {
+    padding: $btn-ptb;
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  fieldset {
+    width: 100%;
+  }
+  input {
+    min-width: 100px;
+    width: 97%;
+    display: block;
+    padding-top: $btn-ptb;
+    padding-bottom: $btn-ptb;
+  }
+
+  label {
+    @extend input;
+  }
+  button[type="reset"] {
+    background-color: $footer-txt;
+    color: $header-bg;
+    &:hover {
+      background-color: $text-col;
+    }
+  }
+}
